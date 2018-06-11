@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Vue Component</title>
+    </head>
+    <body>
+        <div id="app">
+            <!-- 3.shwo-log 이벤트는 child-component에 정의한 v-on:show-log에 전달되고, v-on:show-log의 대상 메서드인 최상위 컴포넌트의 메서드 printText()가 실행됨 -->
+            <child-component v-on:show-log="printText" v-bind:propsdata="message"></child-component>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+        <script>
+        Vue.component('child-component', {
+            //1. show버튼을 클릭하면 클릭 이벤트 v-on:click="showLog"에 따라 showLog() 메서드가 실행됨.
+            props : ['propsdata'],
+            template: '<button v-on:click="showLog" >show{{message}}</button>{{message}}',
+            //2.showLog()메서드 안에 this.$emit('show-log')가 실행되면서 show-log 이벤트가 발생.
+            methods: {
+                showLog: function() {
+                this.$emit('show-log');
+                }
+            }
+        });
+
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue! passed from Parent Component'
+            },
+            methods: {
+                //4.printText()는 received an event라는 로그를 출력하는 메서드이므로 마지막으로 콘솔에 로그가 출력.
+                printText: function() {
+                    console.log(this);
+                    this.message = 'Jihye';
+                }
+            }
+        });
+        </script>
+    </body>
+</html>

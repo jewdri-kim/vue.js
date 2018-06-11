@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue Sample</title>
+  </head>
+  <body>
+    <div id="app">
+      <child-component v-bind:propsdata="anotherMessage + message"  v-on:show-log="printText"></child-component>
+    </div>
+    <script type="text/javascript" src="../js/vue.min.js"></script>
+    <script>
+      Vue.component('child-component',{
+        props : ['propsdata'],
+        template: '<p>{{propsdata}}<button v-on:click="showLog" >show</button></p>',
+        methods: {
+            showLog: function() {
+            this.$emit('show-log');
+            }
+        }
+      });
+
+
+      new Vue({
+        el: '#app',
+        data : {
+          message : 'Hello Vue! passed from Parent Component',
+          anotherMessage: '김지혜'
+        },
+        methods: {
+            //4.printText()는 received an event라는 로그를 출력하는 메서드이므로 마지막으로 콘솔에 로그가 출력.
+            printText: function() {
+                console.log(this);
+                this.message = 'Jihye';
+            }
+        }
+      })
+    </script>
+  </body>
+</html>
