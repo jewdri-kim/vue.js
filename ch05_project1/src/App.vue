@@ -1,4 +1,3 @@
-<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script><!-- 라우터 CDN추가 -->
 <template>
   <div id="app">
     <img src="./assets/logo.png">
@@ -31,10 +30,6 @@ export default {
     }
   }
 }
-
-
-
-
 </script>
 
 <style>

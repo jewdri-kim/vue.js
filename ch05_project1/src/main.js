@@ -16,12 +16,13 @@ var router = new VueRouter({
 import Vue from 'vue'
 import Router from 'vue-router'   //라우터부르기
 import App from './App'
+//import Main from './Main'
 
 
 Vue.use(Router)  // Vue Vuerouter를 연결
 
 //컴포넌트정의  ->이걸 싱글컴포넌트로 하면 위에 import가 되지않을까? 
-const Main = { template: '<div>Main</div>' }
+const Main =  { template: '<div>Main</div>' } 
 const Login = { template: '<div>Login</div>' } 
 const Page = { template: '<div>Page</div>' } 
 
