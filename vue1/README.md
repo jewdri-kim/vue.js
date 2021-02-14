@@ -66,7 +66,7 @@
     - 이미 구축되어있는 프로젝트에 vue도입
     - 일부 페이지만 vue 도입
     - 학습용 
-    - vue 입문가기 [](https://github.com/jewdri-kim/vue.js/tree/master/vue2)
+    - vue 입문가기 [](https://github.com/jewdri-kim/vue.js/tree/master/vue2) 
 
     ```html
     <script src="/path/to/vue.js"></script>
