@@ -31,7 +31,7 @@
 
     - https://nodejs.org/ko/
 
-    - ![img/nodejs.png]
+    - ![](https://github.com/jewdri-kim/vue.js/blob/master/vue1/img/nodejs.png)
 
       
 
