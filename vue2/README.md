@@ -91,10 +91,7 @@
                 person:{
                     name:'jewdri',
                     age: 36
-                },
-                inputData : 'hello',
-                type:'number',
-                link: 'https://www.naver.com'
+                }
             },
             methods:{
                 nextYear :function(greeting){
@@ -139,10 +136,7 @@
                 person:{
                     name:'jewdri',
                     age: 36
-                },
-                inputData : 'hello',
-                type:'number',
-                link: 'https://www.naver.com'
+                }
             },
             methods:{ 
                 nextYear :function(lString){ /* lString : 매개변수, 파라미터 */
