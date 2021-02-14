@@ -48,7 +48,8 @@
   - #### node.js
 
     - https://nodejs.org/ko/
-    - ![](https://github.com/jewdri-kim/vue.js/blob/master/vue1/img/nodejs.png)
+
+      ![](https://github.com/jewdri-kim/vue.js/blob/master/vue1/img/nodejs.png)
 
   - #### visual studio code
 
