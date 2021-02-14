@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue Sample</title>
+  </head>
+  <body>
+    <div id="app">
+      {{message}}
+    </div>
+    <script type="text/javascript" src="../js/vue.min.js"></script>
+    <script>
+      new Vue({
+        el : '#app',
+        data : {
+          message : 'Hello Vue.js!!'
+        },
+        beforeCreate : function(){
+          console.log('beforeCreate');
+        },
+        created : function(){
+          console.log('created');
+        },
+        mounted:function(){
+          console.log('mounted');
+          this.message = "Hello vue !!"
+        },
+        updated: function(){
+          console.log('updated');
+        }
+      });
+    </script>
+  </body>
+</html>
