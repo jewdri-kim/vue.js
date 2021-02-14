@@ -73,7 +73,7 @@
 
     - vue 입문가기 
 
-      [기초다루기]: ttps://github.com/jewdri-kim/vue.js/tree/master/vue2
+      [기초다루기](https://github.com/jewdri-kim/vue.js/tree/master/vue2)
 
     ```html
     <script src="/path/to/vue.js"></script>
