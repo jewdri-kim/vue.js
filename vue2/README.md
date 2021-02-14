@@ -1,4 +1,6 @@
-## Vue.js 입문 - 다루기, 친해지기
+# Vue.js 입문 - 다루기, 친해지기
+
+
 
 - VS CODE에 확장프로그램 설치
 
@@ -26,6 +28,8 @@
 
 
 ## Vue 인스턴스 생성
+
+
 
 ```html
 <!DOCTYPE html>
@@ -56,6 +60,8 @@
 
 
 ## Vue 데이터 (data) 와 메소드 (methods)
+
+
 
 ```html
 <!DOCTYPE html>
@@ -154,7 +160,7 @@
 
 
 
-# 데이터 바인딩 (Data Binding)
+## 데이터 바인딩 (Data Binding)
 
 - v-bind:value = :value
 - v-bind:type = :type
@@ -321,6 +327,8 @@
 
 ##  이벤트 (Events)
 
+
+
 - ### button click 이벤트
 
 ```html
@@ -359,6 +367,8 @@
 </body>
 </html>
 ```
+
+
 
 - ### submit 이벤트
 
@@ -409,8 +419,9 @@
 ```
 
 - form submit 하면 브라우저에서 기본적으로 리로드
-
 - preventDefault() 기능은?
+
+
 
 - ### 이벤트 수식어
 
@@ -467,6 +478,8 @@
 
 
 ## 데이터 양방향 바인딩 (Data Two Way Binding - v-model)
+
+
 
 - ### 키 수식어 (이벤트)
 

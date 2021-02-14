@@ -2,13 +2,17 @@
 
 
 
-- ## Vue.js 는 웹프론트엔드 프레임워크
+- # Vue.js 는 웹프론트엔드 프레임워크
+
+  
 
   - #### 컴포넌트 (Component) 기반의 SPA(Single Page Application)를 구축할 수 있게 해주는 프레임워크
 
   
 
 - ## 컴포넌트 (Component)
+
+  
 
   - 웹을 구성하는 헤더, 레이어팝업, 퀵배너 등 웹페이지 내의 다양한 UI 요소
 
@@ -27,6 +31,8 @@
 
 - ## SPA (Single Page Application)
 
+  
+
   - 단일 페이지 어플리케이션
   - 하나의 페이지 안에서 필요한 영역 부분만 로딩되는 형태
   - 빠른페이지 변환
@@ -37,6 +43,8 @@
 
 - ## 개발환경 
 
+  
+
   - #### node.js
 
     - https://nodejs.org/ko/
@@ -46,7 +54,11 @@
 
     - https://code.visualstudio.com/
 
+    
+
 - ## 설치방법
+
+  
 
   - #### cdn
 
@@ -54,7 +66,7 @@
     - 이미 구축되어있는 프로젝트에 vue도입
     - 일부 페이지만 vue 도입
     - 학습용 
-    - vue 입문가기
+    - vue 입문가기 [](https://github.com/jewdri-kim/vue.js/tree/master/vue2)
 
     ```html
     <script src="/path/to/vue.js"></script>
@@ -78,6 +90,10 @@
     $npm install -g @vue/cli
     ```
 
+    
+
+    - 기본프로젝트 생성해보기 (vue-pratice)
+
     ![](https://github.com/jewdri-kim/vue.js/blob/master/vue1/img/vue2.png)
 
     ![](https://github.com/jewdri-kim/vue.js/blob/master/vue1/img/vue3.png)
@@ -86,7 +102,11 @@
 
     ![](https://github.com/jewdri-kim/vue.js/blob/master/vue1/img/vue6.png)
 
-    ![https://github.com/jewdri-kim/vue.js/blob/master/vue1/img/vue8.png]()
+    
+
+    - 레이아웃 구성해보기 (vue-table-order) - router 사용
+
+    ![](https://github.com/jewdri-kim/vue.js/blob/master/vue1/img/vue8.png)
 
 
 
