@@ -94,7 +94,7 @@
                 }
             },
             methods:{
-                nextYear :function(greeting){
+                nextYear :function(){
                     return this.person.name + '는 내년에 ' + (this.person.age +1)+'살 입니다.'
                 }
             }
