@@ -101,7 +101,7 @@
 
     
 
-    - 기본프로젝트 생성해보기 (vue-pratice)
+    - 기본프로젝트 생성해보기 (vue-pratice 예시 코드 보여주고 설명)
 
     ![](https://github.com/jewdri-kim/vue.js/blob/master/vue1/img/vue2.png)
 
@@ -113,7 +113,7 @@
 
     
 
-    - 레이아웃 구성해보기 (vue-table-order) - router 사용
+    - 레이아웃 구성해보기 (vue-table-order 예시 코드 보여주고 설명) - router 사용
 
     ![](https://github.com/jewdri-kim/vue.js/blob/master/vue1/img/vue8.png)
 
