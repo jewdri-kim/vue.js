@@ -590,11 +590,22 @@
 
 
 
-## (여기서부터 다음시간에) computed 와 watch
+## computed 속성 
 
 
 
-### computed 속성
+-  https://kr.vuejs.org/v2/guide/computed.html
+- 템플릿 내에 표현식을 넣으면 편리
+- 간단한 연산일 때만 이용
+- 너무 많은 연산을 템플릿안에서 하면 코드가 비대해지고 유지보수가 어렵다.
+
+```html
+<div id="example">
+  {{ message.split('').reverse().join('') }}
+</div>
+```
+
+- 복잡한 로직이라면 반드새 computed 속성을 사용
 
 ```html
 <!DOCTYPE html>
@@ -608,7 +619,34 @@
 </head>
 <body>
     <div id="app">
+
+        <h1> 중괄호 안에 연산넣기 {{ message.split('').reverse().join('') }} </h1>
         {{ message.split('').reverse().join('')}}
+
+        <br>
+
+        <h1> computed 로 {{ reverseMessage }}  </h1>
+        {{ reverseMessage }}
+
+        <h1> methods 로 {{ mReverseMessage() }}  </h1>
+        {{ mReverseMessage() }}
+
+        <h1> computed vs  methods </h1>
+        
+        <h2>computed</h2>
+        {{ reverseMessage }}<br>
+        {{ reverseMessage }}<br>
+        {{ reverseMessage }}
+
+        <h2>methods</h2>
+        {{ mReverseMessage() }}<br>
+        {{ mReverseMessage() }}<br>
+        {{ mReverseMessage() }}
+
+        <br>
+        <button @click="chagneMessage">Click</button>
+
+
     </div>
     <script>
         new Vue({
@@ -618,10 +656,120 @@
                 message :'안녕하세요'
             },
             methods:{
+                mReverseMessage(){
+                    return this.message.split('').reverse().join('');
+                },
+                chagneMessage(){
+                    this.message = '쥬드리';
+                }
+            },
+            computed:{
+                reverseMessage(){
+                    return this.message.split('').reverse().join('');
+                }
             }
+        
         })
     </script>
 </body>
 </html>
 ```
+
+
+
+- ### computed 속성의 캐싱 vs 메소드
+  - 메소드도 같은 결과를 얻을 수 있다. (최종결과는 동일
+
+  - 차이점은 **computed 속성은 종속 대상을 따라 저장(캐싱)된다는 것**
+
+  - computed 속성은 해당 속성이 종속된 대상이 변경될 때만 함수를 실행
+
+  - 즉 `message`가 변경되지 않는 한, computed 속성인 `reversedMessage`를 여러 번 요청해도 
+
+    계산을 다시 하지 않고 계산되어 있던 결과를 즉시 반환
+
+  - 메소드를 호출하면 렌더링을 다시 할 때마다 **항상** 함수를 실행
+
+  - 캐싱이 왜 필요???  계산이 많이 걸릴경우 반복해서 다루고많은 계산을 해야한다. 
+
+  - 캐싱이 필요하지 않은 간단한 경우에 메소드를 사용해도 된다.
+
+  
+
+- ### computed 속성의 setter  함수
+
+  - computed 속성은 기본적으로 getter 함수 가지고 있다.
+  - 필요한 경우 setter 함수를 만들어 쓸 수 있다. 
+
+  
+
+## watch 속성 
+
+
+
+- Vus 인스턴스의 데이터의 변경을 관찰하고 이에 반응하는 watch 속성을 제공
+- 데이터 변경에 대한 응답으로 비동기식 또는 시간이 많이 소요되는 작업을 수행하려는 경우에 가장 유용 
+
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초 익히기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        {{ message }}<br>
+        <button @click="chagneMessage">Click</button><br>
+        {{ updated }}
+
+
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                number : 1,
+                message :'안녕하세요', 
+                updated: 'N'
+            },
+            methods:{
+                mReverseMessage(){
+                    return this.message.split('').reverse().join('');
+                },
+                chagneMessage(){
+                    this.message = '쥬드리';
+                }
+            },
+            computed:{
+                reverseMessage(){
+                    return this.message.split('').reverse().join('');
+                }
+            },
+            watch :{
+                message(nawVal, oldVal){
+                    console.log('new' + nawVal);
+                    console.log('old' + oldVal);
+                    this.updated = 'Y'
+                }
+            }
+            
+        
+        })
+    </script>
+</body>
+</html>
+```
+
+
+
+- ### computed 속성 vs watch 속성
+
+  - computed : 계산해야하는 목표 데이터를 정의하는 방식 ( '선언형 프로그래밍' 방식  By 소프트웨어 공학 )
+  - watch : 감시할 데이터를 지정하고 그 데이터가 바뀌면 함수를 실행하는 방식  ( '명령형 프로그래밍' 방식  By 소프트웨어 공학 )
 
