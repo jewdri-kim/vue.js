@@ -699,7 +699,7 @@
 - ### computed 속성의 setter  함수
 
   - computed 속성은 기본적으로 getter 함수 가지고 있다.
-  - 필요한 경우 setter 함수를 만들어 쓸 수 있다. 
+  - 필요한 경우 setter 함수를 만들어 쓸 수 있다.  
 
   
 
