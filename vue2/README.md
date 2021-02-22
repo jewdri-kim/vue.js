@@ -773,3 +773,259 @@
   - computed : 계산해야하는 목표 데이터를 정의하는 방식 ( '선언형 프로그래밍' 방식  By 소프트웨어 공학 )
   - watch : 감시할 데이터를 지정하고 그 데이터가 바뀌면 함수를 실행하는 방식  ( '명령형 프로그래밍' 방식  By 소프트웨어 공학 )
 
+
+
+
+
+## 클래스 & 스타일 바인딩
+
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초 익히기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .red{color:#f00;}
+        .bold{font-weight:bold;}
+    </style>
+</head>
+<body>
+    <div id="app">
+       <div class="red bold">Hello</div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                
+            },
+            methods:{
+            },
+            computed:{
+            },
+            watch :{}           
+        
+        })
+    </script>
+</body>
+</html>
+```
+
+
+
+
+
+### 클래스바인딩
+
+- 기본 클래스 바인딩 
+- :class = v-blnd:class
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초 익히기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .red{color:#f00;}
+        .bold{font-weight:bold;}
+    </style>
+</head>
+<body>
+    <div id="app">
+       <div :class="{red: isRed, bold: isBold}">Hello</div> <!-- v-blnd:class -->
+       <button @click="update">Click</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                isRed: false,
+                isBold: false
+            },
+            methods:{
+                update(){
+                    this.isRed = !this.isRed;
+                    this.isBold = !this.isBold;
+                }
+            },
+            computed:{
+            },
+            watch :{}           
+        
+        })
+    </script>
+</body>
+</html>	
+```
+
+- 기존클래스와 공존할 수도 있다. 
+
+```html
+<div
+  class="static"
+  v-bind:class="{red: isRed, bold: isBold}"
+></div>
+```
+
+
+
+- 클래스 이름에 '-'(하이픈)이 있는경우
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초 익히기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .red{color:#f00;}
+        .bold{font-weight:bold;}
+        .text-type{color:#00f;font-weight:bold;}
+    </style>
+</head>
+<body>
+    <div id="app">
+       <div :class="{'text-type': isType}">Hello</div>
+       <button @click="update">Click</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                isRed: false,
+                isBold: false,
+                isType : false
+            },
+            methods:{
+                update(){
+                    this.isRed = !this.isRed;
+                    this.isBold = !this.isBold;
+                    this.isType = !this.isType;
+                }
+            },
+            computed:{
+            },
+            watch :{}           
+        
+        })
+    </script>
+</body>
+</html>
+```
+
+- 바인딩되는 객체는 꼭 하나가 아니라 객체형태여도 가능
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초 익히기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .red{color:#f00;}
+        .bold{font-weight:bold;}
+        .text-type{color:#00f;font-weight:bold;}
+    </style>
+</head>
+<body>
+    <div id="app">
+       <div :class="classObject">Hello</div>
+       <button @click="update">Click</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                isType : false,
+                classObject:{
+                    red: false,
+                    bold: false,
+                }
+            },
+            methods:{
+                update(){
+                    this.classObject.red = !this.classObject.red;
+                    this.classObject.bold = !this.classObject.bold;
+                }
+            },
+            computed:{
+            },
+            watch :{}           
+        
+        })
+    </script>
+</body>
+</html>
+```
+
+
+
+- 지금까지 배운거 가지고 에러문구와 에러스타일 해보기!!
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초 익히기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .red{color:#f00;}
+        .bold{font-weight:bold;}
+        .text-type{color:#000;font-weight:bold;}
+        .error-text{display:none;color:#f00;font-weight:bold;}
+        
+        .error-type input{border:2px solid #f00;}
+        .error-type .error-text{display:block;}
+ 
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="form-item" :class="{'error-type' : error}">
+            <input type="text"  v-model="name">
+            <button>확인</button>
+            <p class="error-text" >빈칸을 채워주세요.</p>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                name:'홍길동',
+                isType : false,
+                arror: false,
+                isActive: true,
+            },
+            methods:{
+                
+            },
+            watch:{
+                name(){
+                    if( this.name == "" ){
+                        this.error = true;                    
+                    }
+                }
+            },
+            computed :{   
+            }           
+        
+        })
+    </script>
+</body>
+</html>
+```
+
