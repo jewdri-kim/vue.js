@@ -972,7 +972,36 @@
 
 
 
-- 지금까지 배운거 가지고 에러문구와 에러스타일 해보기!!
+- 계산된 속성에도 바인딩
+
+```html
+<div v-bind:class="classObject"></div>
+```
+
+```javascript
+data: {
+  isActive: true,
+  error: null
+},
+computed: {
+  classObject: function () {
+    return {
+      active: this.isActive && !this.error,
+      'text-danger': this.error && this.error.type === 'fatal'
+    }
+  }
+}
+```
+
+- 삼항연산자로
+
+```html
+<div v-bind:class="[isActive ? activeClass : '', errorClass]"></div>
+```
+
+
+
+- ex: 지금까지 배운거 가지고 에러문구와 에러스타일 해보기!! ( 공백일때 빈칸채워주세요 문구 출력)
 
 ```html
 <!DOCTYPE html>
@@ -1029,3 +1058,111 @@
 </html>
 ```
 
+
+
+- 인라인 스타일 
+- `v-bind:style` 객체 구문은 매우 직설적입니다. 거의 CSS 처럼 보이지만 JavaScript 객체
+- css의 경우 '-'(하이픈) 으로 연결되는것만 카멜로 표기해주고 같은 사용법 
+- 속성 이름에 camelCase와 kebab-case (따옴표를 함께 사용해야 합니다)를 사용
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초 익히기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .red{color:#f00;}
+        .bold{font-weight:bold;}
+        .text-type{color:#000;font-weight:bold;}
+        .error-text{display:none;color:#f00;font-weight:bold;}
+        
+        .error-type input{border:2px solid #f00;}
+        .error-type .error-text{display:block;}
+ 
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div :style="{color:red, fontSize:size}">Hello</div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                red: '#f00',
+                size: '30px',
+                name:'홍길동',
+                isType : false,
+                arror: false,
+                isActive: true,
+            },
+            methods:{
+                
+            },
+            watch:{
+                name(){
+                    if( this.name == "" ){
+                        this.error = true;                    
+                    }
+                }
+            },
+            computed :{   
+            }           
+        
+        })
+    </script>
+</body>
+</html>
+```
+
+
+
+- 컴포넌트와 함께 사용
+
+예를 들어, 이 컴포넌트를 선언하는 경우에:
+
+```javascript
+Vue.component('my-component', {
+  template: '<p class="foo bar">Hi</p>'
+})
+```
+
+사용할 클래스 일부를 추가:
+
+```html
+<my-component class="baz boo"></my-component>
+```
+
+렌더링 된 HTML :
+
+```html
+<p class="foo bar baz boo">Hi</p>
+```
+
+클래스 바인딩도 동일:
+
+```html
+<my-component v-bind:class="{ active: isActive }"></my-component>
+```
+
+`isActive`가 참일 때 렌더링 된 HTML은 아래와 같다:
+
+```html
+<p class="foo bar active">Hi</p>
+```
+
+
+
+- 다중값 제공 (2.3 버전부터)
+- 스타일 속성에 접두사가 있는 여러값을 배열로 전달
+
+```html
+<div v-bind:style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'] }"></div>
+```
+
+- 브라우저가 지원하는 배열의 마지막 값만 렌더링
+
+- 이 예제에서는 flexbox의 접두어가 붙지않은 버전을 지원하는 브라우저에 대해 `display : flex`를 렌더링
