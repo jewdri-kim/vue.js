@@ -1060,7 +1060,8 @@ computed: {
 
 
 
-- 인라인 스타일 
+### 스타일바인딩
+
 - `v-bind:style` 객체 구문은 매우 직설적입니다. 거의 CSS 처럼 보이지만 JavaScript 객체
 - css의 경우 '-'(하이픈) 으로 연결되는것만 카멜로 표기해주고 같은 사용법 
 - 속성 이름에 camelCase와 kebab-case (따옴표를 함께 사용해야 합니다)를 사용
@@ -1164,5 +1165,456 @@ Vue.component('my-component', {
 ```
 
 - 브라우저가 지원하는 배열의 마지막 값만 렌더링
-
 - 이 예제에서는 flexbox의 접두어가 붙지않은 버전을 지원하는 브라우저에 대해 `display : flex`를 렌더링
+
+
+
+## 조건문 사용 v-if
+
+- 개발자 도구상에서 봐도 div 태그 없음
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초 익히기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div v-if="show">YES</div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                show:false
+            }        
+        
+        })
+    </script>
+</body>
+</html>
+```
+
+- toggle해서 관찰
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초 익히기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div v-if="show">YES</div>
+        <button @click="toggleShow">Click</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                show:false
+            },
+            methods:{
+                toggleShow(){
+                    this.show = !this.show;
+                }
+            }        
+        
+        })
+    </script>
+</body>
+</html>
+```
+
+### v-else
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초 익히기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div v-if="show">YES</div>
+        <div v-else>NO</div>
+        <button @click="toggleShow">Click</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                show:false
+            },
+            methods:{
+                toggleShow(){
+                    this.show = !this.show;
+                }
+            }        
+        
+        })
+    </script>
+</body>
+</html>
+```
+
+
+
+- 여러개 태그를 한번에 보이게 안보이게 할땐??!!
+- template
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초 익히기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="app">
+        <template v-if="show">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </template>
+        <div v-else>NO</div>
+        <button @click="toggleShow">Click</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                show:false
+            },
+            methods:{
+                toggleShow(){
+                    this.show = !this.show;
+                }
+            }        
+        
+        })
+    </script>
+</body>
+</html>
+```
+
+
+
+### v-else-if
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초 익히기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="app">
+        <template v-if="number === 1">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </template>
+        <div v-else-if="number === 2">Hi</div>
+        <div v-else>No</div>
+        <button @click="increaseNumber">Click</button>{{number}}
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                show:false,
+                number: 1,
+            },
+            methods:{
+                toggleShow(){
+                    this.show = !this.show;
+                },
+                increaseNumber(){
+                    this.number++;
+                }
+            }        
+        
+        })
+    </script>
+</body>
+</html>
+```
+
+
+
+## v-show (v-if와의 차이)
+
+- display:none;
+- 태그자체는 랜더링
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초 익히기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div v-show="show">Yes</div>
+        <button @click="toggleShow">Click</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                show:false,
+                number: 1,
+            },
+            methods:{
+                toggleShow(){
+                    this.show = !this.show;
+                },
+                increaseNumber(){
+                    this.number++;
+                }
+            }        
+        
+        })
+    </script>
+</body>
+</html>
+```
+
+
+
+## v-if vs v-show
+
+- v-if 는 컴포넌트가 적절하게 제거되고 다시 만들어지기 때문에 "진짜" 조건부 랜더링
+  - v-if 는초기랜더링에서  조건이 거짓인 경우 아무것도 하지 않는다.
+  - 처음으로 참이 될때까지 랜더링 되지 않는다.
+- v-show는 단순 , 초기 조건에 관계없이 항상 랜더링된다
+  - css기반의 토글
+- 일반적으로 v-if는 토글 비용이 높고, v-show는 초기 랜더링 비용이 더 높다.
+- 자주 바뀌기 원하면 v-show, 런타임 시 조건이 바뀌지 않으면 v-if를 권장
+
+
+
+## v-for
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초 익히기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div>
+            {{people[0].name}}   {{people[0].age}}
+        </div>
+        <div>
+            {{people[1].name}}   {{people[1].age}}
+        </div>
+        <div>
+            {{people[2].name}}   {{people[2].age}}
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                people:[
+                    {name:'a', age:20},
+                    {name:'b', age:21},
+                    {name:'c', age:22},
+                ]
+            },
+            methods:{
+            }        
+        
+        })
+    </script>
+</body>
+</html>
+```
+
+- ### v-for 와 배열
+
+  - `in` 대신에 `of`를 구분자로 사용할 수 있다. 
+  - JavaScript의 이터레이터에 대한 자바스크립트 구문과 유사
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초 익히기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="person in people"> <strong>{{ person.name }}</strong> {{ person.age }} </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                people:[
+                    {name:'Jewdri', age:20},
+                    {name:'Sally', age:21},
+                    {name:'Ella', age:22},
+                    {name:'Joy', age:22},
+                    {name:'Kaylee', age:22},
+                ]
+            },
+            methods:{
+            }        
+        
+        })
+    </script>
+</body>
+</html>
+```
+
+- #### v-for 에서 인덱스가져오기
+
+```html
+
+<div id="app">
+    <ul>
+        <li v-for="(person, i) in people"> {{i}} : <strong>{{ person.name }}</strong> {{ person.age }} </li>
+    </ul>
+</div>
+
+```
+
+
+
+- ### v-for 와 객체
+
+  - v-for를 사용하여 객체의 속성을 반복
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초 익히기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="value in object"> <strong>{{ value }}</strong> </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                object:{
+                    title: "vue.js 기초다루기",
+                    author:"Jewdri",
+                    date: "2021.02.25"
+                },
+                people:[
+                    {name:'Jewdri', age:20},
+                    {name:'Sally', age:21},
+                    {name:'Ella', age:22},
+                    {name:'Joy', age:22},
+                    {name:'Kaylee', age:22},
+                ]
+            },
+            methods:{
+            }        
+        
+        })
+    </script>
+</body>
+</html>
+```
+
+
+
+- 키 값은 두번쨰 인자로 제공
+
+```html
+<div id="app">
+    <ul>
+    	<li v-for="(value, key) in object"> {{ key }}: <strong>{{ value }}</strong> </li>
+    </ul>
+</div>
+```
+
+- 인덱스는 세번째 인자
+
+```html
+<div id="app">
+    <ul>
+    	<li v-for="(value, key, i) in object"> {{ i}}. {{ key }}: <strong>{{ value }}</strong> </li>
+    </ul>
+</div>
+```
+
+
+
+### v-for 에서 key 속성제공
+
+- v-for 의 각 항목들에 고유한 key 속성을 제공해야한다.
+- vue에서 개별 DOM 노드들을 추척하고 기존 엘리먼트를 재사용, 재정렬 위해서 사용
+- `key`에 대한 이상적인 값은 각 항목을 식별할 수 있는 고유한 ID
+
+```html
+ <ul>
+ 	<li v-for="(person, i) in people" :key="person.name"> {{ i}}. <strong>{{ person.name }}</strong> {{person.age }}</li>
+ </ul>
+```
+
+- 보통 가져오는 데이터의 각 항목마다, id가 있기 때문에 id를 넣어주면 된다.
+
+```html
+ <ul>
+ 	<li v-for="(person, i) in people" :key="person."> {{ i}}. <strong>{{ person.name }}</strong> {{person.age }}</li>
+ </ul>
+```
+
+- 인덱스의 경우는 삭제될 경우 인덱스가 바뀌므로 사용하지 말것 
