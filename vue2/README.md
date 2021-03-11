@@ -1613,8 +1613,176 @@ Vue.component('my-component', {
 
 ```html
  <ul>
- 	<li v-for="(person, i) in people" :key="person."> {{ i}}. <strong>{{ person.name }}</strong> {{person.age }}</li>
+ 	<li v-for="(person, i) in people" :key="person.id"> {{ i}}. <strong>{{ person.name }}</strong> {{person.age }}</li>
  </ul>
 ```
 
 - 인덱스의 경우는 삭제될 경우 인덱스가 바뀌므로 사용하지 말것 
+
+
+
+
+
+## 여러개의 Vue 인스턴스 사용하기
+
+- 지금까지는 id="app" 안에만 사용
+- id="app" 아닌 다른곳에도 사용하려면?
+
+```html
+
+    <div id="app">
+        {{ name }}
+    </div>
+    <div>
+        {{ name }}   /* 여기서도 사용하려면 ? */
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                name : 'Jewdri'
+            },
+            methods:{
+            }        
+        
+        })
+    </script>
+```
+
+- 아래와 같이
+
+```html
+
+    <div id="app">
+        {{ name }}
+    </div>
+    <div id="app-1">
+        {{ name }}
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                name : 'Jewdri'
+            },
+            methods:{
+            }        
+        
+        })
+        
+        new Vue({
+            el: '#app-1',
+            data: {
+                name : 'Jewdri'
+            },
+            methods:{
+            }        
+        
+        })
+    </script>
+```
+
+- 다른 인스턴스에서 또 다른 인스턴스 데이터 변경하고 싶을 땐 ??
+
+  - 변수에 담는다 (상수)
+
+  ```html
+  
+      <div id="app">
+          {{ name }}
+          <button @click="changeText">Click</button>
+      </div>
+      <div id="app-1">
+          {{ name }}
+          <button @click="changeText">Click</button>
+      </div>
+      <script>
+          const app = new Vue({
+              el: '#app',
+              data: {
+                  name : 'Jewdri'
+              },
+              methods:{
+                  changeText(){
+                      //this.name = 'Jewdri Updated';
+                      app1.name = 'Jewdri Updated';
+                  }
+              }        
+          
+          })
+          
+          const app1 = new Vue({
+              el: '#app-1',
+              data: {
+                  name : 'Jewdri1'
+              },
+              methods:{
+                  changeText(){
+                      this.name = 'Jewdri1 Updated'
+                  }
+              }        
+          
+          })
+      </script>
+  ```
+
+
+
+## Vue 컴포넌트
+
+- 뷰 인스턴스 두개를 사용했지만, 똑같은 데이터와 메쏘드라면??
+- 똑같은 데이터와 메쏘드가 반복 => 중복제거 => Vue 컴포넌트 
+
+```html
+
+    <div id="app">
+        {{ name }}
+        <button @click="changeText">Click</button>
+    </div>
+    <div id="app-1">
+        {{ name }}
+        <button @click="changeText">Click</button>
+    </div>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                name : 'Jewdri'
+            },
+            methods:{
+                changeText(){
+                    this.name = 'Jewdri Updated'
+                }
+            }        
+        
+        })
+        
+        const app1 = new Vue({
+            el: '#app-1',
+            data: {
+                name : 'Jewdri'
+            },
+            methods:{
+                changeText(){
+                    this.name = 'Jewdri Updated'
+                }
+            }        
+        
+        })
+    </script>
+```
+
+- 컴포넌트는 Vue의 가장 강력한 기능중 하나
+- HTML 엘리먼트를 확장하여 재사용 가능한 코드를 캡슐화
+- Vue 컴포넌트는 Vue 인스턴스 이기도하다
+- 옵션 객체를 사용
+
+
+
+### Vue 컴포넌트 사용하기
+
+#### 전역등록
+
+
+
+#### 지역등록
