@@ -100,6 +100,13 @@
 
     ![](https://github.com/jewdri-kim/vue.js/blob/master/vue1/img/vue6.png)
 
+    - 많이 사용하는 Router, Vuex 선택
+    - CSS Pro-processors 도 선택
+
+    ![](https://github.com/jewdri-kim/vue.js/blob/master/vue1/img/vue9.png)
+
+    - https://www.npmtrends.com/dart-sass-vs-node-sass 참고하여 Sass/SCSS (with node--sass) 선택 
+
     
 
     
