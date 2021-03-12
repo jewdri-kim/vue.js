@@ -96,9 +96,11 @@
     ![](https://github.com/jewdri-kim/vue.js/blob/master/vue1/img/vue5.png)
 
     -  Default : 기본적인것만 설치
-    - 맨 마지막 Manually select featuers
+    - 맨 마지막 Manually select featuers 
 
     ![](https://github.com/jewdri-kim/vue.js/blob/master/vue1/img/vue6.png)
+
+    
 
     
 
