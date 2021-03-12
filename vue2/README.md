@@ -1783,6 +1783,198 @@ Vue.component('my-component', {
 
 #### 전역등록
 
+- 뷰 컴포넌트는 아래와 같이 사용
+- 인스턴스와 다른점은 data를 객체가 아니라 함수형태로 해서 반환해준다.
+- 이유는 객체일 경우 재사용될때마다 주소가 참조되어서 값이 변경될때 다 같이 변경되기 때문에 
+- 참고 삼아 알아두기 : 원시적 데이터 타입과 참조형 테이터타입의 차이 
+
+```html
+    <div id="app">
+        <jewdri-button></jewdri-button>
+    </div>
+    <div id="app-1">
+        <jewdri-button></jewdri-button>
+    </div>
+    <script>
+        Vue.component('jewdri-button',{
+            template: `
+            <div>
+                {{ name }}
+                <button @click="changeText">Click</button>
+            </div>
+            `,
+            data() {  //재 사용 컴포넌트라서 Object 쓰게 되면 주소가 참조해서 전부 다 값변형될때 업데이트 되기때문에  
+                return {
+                    name : 'Jewdri'
+                }
+            },
+            methods:{
+                changeText(){
+                    this.name = 'Jewdri Updated';
+                }
+            }
+        });
+        const app = new Vue({
+            el: '#app'
+        
+        })
+        
+        const app1 = new Vue({
+            el: '#app-1'
+        
+        })
+    </script>
+```
+
+
+
+##### 컴포넌트 안에서 컴포넌트 사용하기
+
+```html
+
+    <div id="app">
+        <jewdri-button></jewdri-button>
+    </div>
+    <div id="app-1">
+        <jewdri-button></jewdri-button>
+    </div>
+    <script>
+        Vue.component('hello-world',{
+            template: `
+                <strong>Hello World</strong>
+            `
+
+        })
+        Vue.component('jewdri-button',{
+            template: `
+            <div>
+                <hello-world></hello-world><br>
+                {{ name }}
+                <button @click="changeText">Click</button>
+            </div>
+            `,
+            data() {  //재 사용 컴포넌트라서 Object 쓰게 되면 주소가 참조해서 전부 다 값변형될때 업데이트 되기때문에  
+                return {
+                    name : 'Jewdri'
+                }
+            },
+            methods:{
+                changeText(){
+                    this.name = 'Jewdri Updated';
+                }
+            }
+        });
+        const app = new Vue({
+            el: '#app'
+        
+        })
+        
+        const app1 = new Vue({
+            el: '#app-1'
+        
+        })
+    </script>
+```
+
 
 
 #### 지역등록
+
+- 빌드시스템을 사용하고 전역등록만 하게 될 경우,  어떤 컴포넌트를 사용하지 않더라도 최종빌드에는 들어가 있게 된다.
+- 사요자가 내려받아야 하는 자바스크립트의 양이 불필요햐게 커지게됨
+- 지역등록을 하여 사용할 수 있는 컴포넌트는 지역등록 하는것이 좋다.
+
+
+
+1. ##### 컴포넌트를 변수안에 넣는다.
+
+```javascript
+ const JewdriButton = {
+                template: `
+                <div>
+                    <hello-world></hello-world><br>
+                    {{ name }}
+                    <button @click="changeText">Click</button>
+                </div>
+                `,
+                data() {  //재 사용 컴포넌트라서 Object 쓰게 되면 주소가 참조해서 전부 다 값변형될때 업데이트 되기때문에  
+                    return {
+                        name : 'Jewdri'
+                    }
+                },
+                methods:{
+                    changeText(){
+                        this.name = 'Jewdri Updated';
+                    }
+                }
+
+  }
+```
+
+2. ##### 사용하려는 인스턴스에 컴포넌트를 등록한다.
+
+   : 태그이름(컴포넌트 이름 ) : 변수이름 
+
+```javascript
+const app = new Vue({
+            el: '#app',
+            components : {
+                'jewdri-button':JewdriButton
+            }
+        
+})
+```
+
+
+
+##### 두개 다 지역컴포넌트로 사용하기
+
+```html
+
+    <div id="app">
+        <jewdri-button></jewdri-button>
+    </div>
+
+    <script>
+        const helloWorld = {
+            template: `
+                <strong>Hello World</strong>
+            `
+        }
+
+
+        const JewdriButton = {
+            components:{
+                'hello-world' : helloWorld
+            },
+            template: `
+            <div>
+                <hello-world></hello-world><br>
+                {{ name }}
+                <button @click="changeText">Click</button>
+            </div>
+            `,
+            data() {  //재 사용 컴포넌트라서 Object 쓰게 되면 주소가 참조해서 전부 다 값변형될때 업데이트 되기때문에  
+                return {
+                    name : 'Jewdri'
+                }
+            },
+            methods:{
+                changeText(){
+                    this.name = 'Jewdri Updated';
+                }
+            }
+
+        }
+        const app = new Vue({
+            el: '#app',
+            components : {
+                'jewdri-button':JewdriButton
+            }
+        
+        })
+    </script>
+```
+
+
+

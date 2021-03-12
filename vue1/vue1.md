@@ -60,17 +60,53 @@
 
     - 기본적인 폴더구조, 기본설정들 갖춰진 상태로 프로젝트 
 
+    - https://cli.vuejs.org/
+
+    - node.js
+
+      - https://nodejs.org/ko/
+      - node js 설치되면?
+
+      ```cmd
+      $node -v
+      ```
+
+      ```cmd
+      $npm -v
+      ```
+
+      ![](https://github.com/jewdri-kim/vue.js/blob/master/vue1/img/vue3.png)
+
+    - 글로벌로 vue cli 설치해주기 
+
     ```cmd
     $npm install -g @vue/cli
     ```
 
     ![](https://github.com/jewdri-kim/vue.js/blob/master/vue1/img/vue2.png)
 
-    ![](https://github.com/jewdri-kim/vue.js/blob/master/vue1/img/vue3.png)
+    - 설치 됐는지 확인하기
+
+    ```cmd
+    $vue $ vue --version
+    ```
+
+    - vue cli 로 프로젝트 생성해보기
 
     ![](https://github.com/jewdri-kim/vue.js/blob/master/vue1/img/vue5.png)
 
+    -  Default : 기본적인것만 설치
+    - 맨 마지막 Manually select featuers
+
     ![](https://github.com/jewdri-kim/vue.js/blob/master/vue1/img/vue6.png)
+
+    
+
+    
+
+    
+
+    
 
     ![https://github.com/jewdri-kim/vue.js/blob/master/vue1/img/vue8.png]()
 
