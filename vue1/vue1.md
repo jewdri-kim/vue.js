@@ -107,6 +107,10 @@
 
     - https://www.npmtrends.com/dart-sass-vs-node-sass 참고하여 Sass/SCSS (with node--sass) 선택 
 
+    ![](https://github.com/jewdri-kim/vue.js/blob/master/vue1/img/vue10.png)
+
+    
+
     
 
     
