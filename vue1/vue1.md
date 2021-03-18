@@ -39,7 +39,7 @@
     
     - 기존  vue cli 프로젝트 실행 ( 해당프로젝트 폴더 )
 
-    ```cmd
+    ```terminal
   $npm run serve
     ```
 
