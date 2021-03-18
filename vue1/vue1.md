@@ -47,14 +47,16 @@
     
   - vue cli 로 프로젝트 생성해보기
     
+  
   ![](https://github.com/jewdri-kim/vue.js/blob/master/vue1/img/vue5.png)
-    
+  
     -  Default : 기본적인것만 설치
   - 맨 마지막 Manually select featuers 
     
+  
   ![](https://github.com/jewdri-kim/vue.js/blob/master/vue1/img/vue6.png)
-    
-  - 많이 사용하는 Router, Vuex 선택
+  
+- 많이 사용하는 Router, Vuex 선택
     - CSS Pro-processors 도 선택
 
     ![](https://github.com/jewdri-kim/vue.js/blob/master/vue1/img/vue9.png)
@@ -68,7 +70,7 @@
     
 
     
-
+  
     
     
     
