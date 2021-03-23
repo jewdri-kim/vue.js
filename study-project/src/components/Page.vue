@@ -11,7 +11,7 @@
     </div> 
     
 </template>
- 
+   
 <script lang="js">
 import VLink from '@/components/VLink.vue'
 
