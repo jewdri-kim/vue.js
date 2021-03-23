@@ -8,7 +8,7 @@
                 <li><v-link href="/page">페이지</v-link></li>
             </ul>
         </nav>
-    </div>
+    </div> 
     
 </template>
  
