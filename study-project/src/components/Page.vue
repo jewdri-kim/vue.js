@@ -7,7 +7,7 @@
                 <li><v-link href="/about">어바웃</v-link></li>
                 <li><v-link href="/page">페이지</v-link></li>
             </ul>
-        </nav>
+        </nav> 
     </div> 
     
 </template>
