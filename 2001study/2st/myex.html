@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2st Snack Bar</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="clickButton">Jewdri</button><br><br>
+        <button @click="clickButton">Sally</button><br><br>
+        <button @click="clickButton">Ella</button><br><br>
+        <button @click="clickButton">Joy</button><br><br>
+        <button @click="clickButton">Keylee</button><br><br>
+        <div class="pop-toest" >
+            <strong>{{text}} {{name}} !!</strong>
+        </div>
+    </div>
+
+    <script>
+
+        new Vue({
+            el: '#app',
+            data : {
+                name : null,
+                text: 'Hello',
+                isOpen : false,
+                openTime : 1500                
+            },
+            methods : {
+                clickButton(event){
+                    if(!this.isOpen){
+                        this.name = event.target.innerText;
+                        this.addClass();
+                        setTimeout(this.removeClass, this.openTime);
+                    }
+                },
+                addClass(){
+                    document.querySelector('.pop-toest').classList.add('active');
+                    this.isOpen = true;
+                },
+                removeClass(){
+                    document.querySelector('.pop-toest').classList.remove('active');
+                    this.isOpen = false;
+                }
+            }
+        
+        })
+    </script>
+    <style>
+        #app{text-align:center;}
+        button{display:inline-block;position:relative;width:300px;height:80px;border-radius:40px;background:#491BC7;font-size:24px;line-height:80px;color:#fff;}
+        .pop-toest{display:none;position:fixed;bottom:100px;left:50%;transform:translate(-50%,0);width:auto;padding:20px;min-width:200px;border-radius:20px;background:rgba(0,0,0,0.7);color:#fff;font-size:16px;text-align:center;}
+        .pop-toest.active{display:block;}
+    </style>
+</body>
+</html>
