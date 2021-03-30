@@ -1,0 +1,141 @@
+@charset "UTF-8";
+
+@import 'variable',
+'mixin';
+
+* {margin:0;padding:0;vertical-align:baseline;box-sizing:border-box}
+::before, ::after{box-sizing:border-box}
+
+/* HTML5 display-role reset for older browsers */
+body {line-height:1;font-family:"Roboto","Noto",sans-serif;font-weight:500;font-size:16px;letter-spacing:-1px;color:$CBlack}
+button{line-height:1;font-family:"Roboto","Noto",sans-serif;font-weight:500;font-size:16px;letter-spacing:-1px;color:$CBlack}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,q:before, q:after {content: '';display:block;}
+h1, h2, h3, h4, h5, h6 {font-size:100%;font-weight:500;color:$CBlack;line-height:1em;}
+strong{font-weight:700}
+
+/* 테이블 스타일 초기화 */
+table {width:100%;border-collapse:collapse;border-spacing:0;empty-cells:show;table-layout:fixed;}
+th,td{font-weight:500}
+td {word-wrap:break-word; word-break:break-all;}
+fieldset {border:0;margin:0;padding:0;}
+legend, caption {visibility:hidden;overflow:hidden;width:0;height:0;font-size:0;line-height:0;}
+address, caption, em, var{font-style:normal;font-weight:500}
+
+/* 링크 */
+a{color:#333;text-decoration:none}
+
+/* 이미지, 폼관련 요소 */
+img {border:0;vertical-align:top}
+
+label,
+select,
+input,
+textarea{vertical-align:middle}
+
+input,
+select,
+textarea {font-size:1em;vertical-align:middle}
+
+input[type="text"],
+input[type="submit"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="reset"],
+input[type="email"], input[type="tel"],
+input[type="search"],
+input[type="file"],
+input[type="email"],
+input[type="tel"],
+textarea{width:100%;border:1px solid #ddd;height:50px;box-sizing:border-box;padding:0 19px;font-size:16px;color:$CBlack;letter-spacing:-1px;font-weight:500;font-family:"Roboto","Noto",sans-serif;line-height:50px}
+
+input[type="submit"] {cursor:pointer}
+
+input[readonly] {background:#e8eaf0;color:#000;}
+
+input:disabled {background:#fff}
+
+input[type="text"],
+input[type="password"]{
+	@include prefix(transition, all 0.3s ease-in-out, webkit);
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+input[type="text"]:hover,
+input[type="password"]:hover,
+textarea:hover{border:1px solid $CBlack;outline:none}
+
+input[type="text"]::-ms-clear{width:0;height:0;display:none;}
+
+select{border:1px solid #ddd;padding:0 0 0 20px;background:#fff;box-sizing:border-box;
+	@include prefix(appearance, none, webkit moz);
+	border-radius:0;outline:none;font-weight:400;font-family:"Roboto","Noto",sans-serif;color:$CGray2;width:100%;height:50px;line-height:50px;font-size:16px}
+select::-ms-expand {display:none;}
+option.title{display:none}
+
+textarea {border:solid 1px #d9d9d9;height:90px;box-sizing:border-box;padding:10px;width:100%;border-radius:0;overflow:auto;@include prefix(appearance, none, webkit moz);}
+button {border:0;box-shadow:none;cursor:pointer;@include prefix(appearance, none, webkit moz);}
+button:focus,
+button:hover{outline:none}
+
+input[type="radio"],
+input[type="checkbox"]{position:absolute;top:0;left:0;opacity:0;@include prefix(appearance, none, webkit moz ms o);}
+
+
+input::-webkit-input-placeholder{color:#999;font-weight:400;}
+input::-moz-placeholder{color:#999;font-weight:400;}
+input::-ms-input-placeholder{color:#999;font-weight:400;}
+input::-webkit-input-placeholder{color:#999;font-weight:400;}
+input:-moz-placeholder{color:#999;font-weight:400;}
+input:-ms-input-placeholder{color:#999;font-weight:400;}
+input::-ms-input-placeholder{color:#999;font-weight:400;}
+input::placeholder {color:#999;font-weight:400;}
+input::-ms-clear{display:none}
+input::-ms-reveal{display:none}
+
+textarea::-webkit-input-placeholder{color:#999;font-weight:400;}
+textarea::-moz-placeholder{color:#999;font-weight:400;}
+textarea::-ms-input-placeholder{color:#999;font-weight:400;}
+textarea::-webkit-input-placeholder{color:#999;font-weight:400;}
+textarea:-moz-placeholder{color:#999;font-weight:400;}
+textarea:-ms-input-placeholder{color:#999;font-weight:400;}
+textarea::-ms-input-placeholder{color:#999;font-weight:400;}
+textarea::placeholder {color:#999;font-weight:400;}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder,
+input:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder,
+input:focus::-ms-input-placeholder,
+textarea:focus::-ms-input-placeholder {color:transparent}
+
+::-webkit-scrollbar {width:10px;height:10px}
+::-webkit-scrollbar-track {background: #f1f1f1}
+::-webkit-scrollbar-thumb {background:#a7a7a7}
+
+.hidden {position:absolute;width:0;height:0;font-size:0;line-height:0;overflow:hidden;visibility:hidden;}
+
+.t{
+	&-l{
+		text-align:left!important;
+	}
+	&-r{
+		text-align:right!important;
+	}
+	&-c{
+		text-align:center!important;
+	}
+}
+
+

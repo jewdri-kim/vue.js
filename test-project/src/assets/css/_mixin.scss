@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+@import 'variable';
+
+//icon
+//화살표 아이콘 (size,컬러값,방향)
+//@include icon-arr(10, #000, bottom);
+
+//icon
+@mixin icon-arr($size:8,$color:$CBlack,$rotate:right,$border:1){
+	display:inline-block;
+	width:$size+px;height:$size+px;
+	border:{
+		style:solid;
+		color:transparent $color $color transparent;
+		width:0 $border+px $border+px 0;
+	}
+	@if $rotate == top{
+		@include prefix(transform,rotate(-135deg),webkit ms)} @else if $rotate == left{
+		@include prefix(transform,rotate(135deg),webkit ms)} @else if $rotate == right{
+		@include prefix(transform,rotate(-45deg),webkit ms)} @else if $rotate == bottom{
+		@include prefix(transform,rotate(45deg),webkit ms)}
+}
+
+@mixin icon-x($size:8,$color:$CBlack,$border:1){
+	&:after,
+	&:before{
+		content:'';
+		display:block;
+		position:absolute;top:50%;left:50%;
+		@include prefix(transform,translate(-50%,-50%) rotate(45deg),webkit);
+		background:$color;
+	}
+	&:after{
+		width:$size+px;
+		height:$border+px;
+	}
+	&:before{
+		width:$border+px;
+		height:$size+px;
+	}
+}
+
+@mixin icon-plus($size:10,$color:$CBlack,$border:1){
+	&:after,
+	&:before{
+		content:'';
+		display:block;
+		position:absolute;top:50%;left:50%;
+		background:$color;
+	}
+	&:after{
+		width:$size+1+px;
+		height:$border+px;
+		margin-left:-$size/2+px;
+	}
+	&:before{
+		width:$border+px;
+		height:$size+1+px;
+		margin-top:-$size/2+px;
+	}
+}
+
+//absolute
+//수직정렬(요소세로값)
+//@include abs-vertical(10);
+
+@mixin abs-vertical(){
+	position:absolute;top:50%;
+	transform:translateY(-50%);
+}
+@mixin abs-center($w,$h){
+	position:absolute;top:50%;left:50%;
+	margin-top:-($h/2)+px;
+	margin-left:-($w/2)+px;
+}
+
+//prefix
+
+//벤더 프리픽스 (속성,속성값,브라우저 추가)
+//@include prefix(transition, all 0.15s ease-in-out, webkit ms);
+
+@mixin prefix($property, $value, $prefixes: ()){
+	@each $prefix in $prefixes{
+		#{'-' + $prefix + '-' + $property}:$value;
+	}
+	#{$property}:$value;
+}
+
+//말줄임
+@mixin text-hidden-multi($line:1,$lineHeight:26){
+	display:-webkit-box;
+	-webkit-line-clamp:$line;
+	-webkit-box-orient:vertical;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	line-height:($lineHeight*$line)/$line+px;
+	height:$lineHeight*$line+px;
+	word-break:break-all;
+}
+
+@mixin text-hidden(){
+	display:block;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+
