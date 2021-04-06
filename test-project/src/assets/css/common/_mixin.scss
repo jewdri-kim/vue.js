@@ -1,0 +1,195 @@
+@charset "UTF-8";
+
+@import 'variable';
+
+
+//화살표
+$sqrt_2: 1.41421356237;
+@mixin icon-arr($direction: 'right', $width: 9px, $height: 17px, $thick: 1px, $color: $CBrandGra, $display: inline-block, $position: relative){
+	position: $position;
+	display: $display;
+	width: $width;
+	height: $height;
+	overflow: hidden;
+	vertical-align: -0.2em;
+	transition:0.3s;
+	
+	@if ($direction == 'up' or $direction == 'down') {
+		$size: floor($width/$sqrt_2 - 2*$thick);
+		$rate: 2*$height/$width;
+		$margin-top : round($rate*$size/(2*$sqrt_2));
+		
+		&:before { 
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: $size;
+			height: $size;
+			@if ($rate == 1) {
+				-webkit-transform: translate(-50%, -50%) rotate(45deg);
+				transform: translate(-50%, -50%) rotate(45deg);
+			} @else {
+				-webkit-transform: translate(-50%, -50%) scale(1, $rate) rotate(45deg);
+				transform: translate(-50%, -50%) scale(1, $rate) rotate(45deg);
+			}
+			
+			@if ($direction == 'up') {
+				margin-top: $margin-top;
+				border-top: $thick solid $color;
+				border-left: $thick solid $color;
+			} @else if ($direction == 'down') {
+				margin-top: - $margin-top;
+				border-right: $thick solid $color;
+				border-bottom: $thick solid $color;
+			}
+		}
+	}  @else if ($direction == 'left' or $direction == 'right') {
+		$size: floor($height/$sqrt_2 - 2*$thick);
+		$rate: 2*$width/$height;
+		$margin-left : round($rate*$size/(2*$sqrt_2));
+		
+		&:before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: $size;
+			height: $size;
+			
+			@if ($rate == 1) {
+				-webkit-transform: translate(-50%, -50%) rotate(45deg);
+				transform: translate(-50%, -50%) rotate(45deg);
+			} @else {
+				-webkit-transform: translate(-50%, -50%) scale($rate, 1) rotate(45deg);
+				transform: translate(-50%, -50%) scale($rate, 1) rotate(45deg);
+			}
+			
+			@if ($direction == 'left') {
+				margin-left: $margin-left;
+				border-left: $thick solid $color;
+				border-bottom: $thick solid $color;
+			}  @else if ($direction == 'right') {
+				margin-left: - $margin-left;
+				border-top: $thick solid $color;
+				border-right: $thick solid $color;
+			}
+		}
+	}
+}
+
+//엑스
+@mixin icon-x($size: 17px, $thick: 1px, $color: #787878, $padding: 0, $display: inline-block, $position: relative){
+	position:$position;
+	display:$display;
+	width:$size + $padding*2;
+	height:$size + $padding*2;
+	&:before, &:after{
+		content:'';
+		position:absolute;
+		top:50%;
+		left:50%;
+		width:$size*$sqrt_2 - $thick;
+		height:$thick;
+		background-color:$color;
+	}
+	&:before{
+		-webkit-transform:translate(-50%, -50%) rotate(45deg);
+		transform:translate(-50%, -50%) rotate(45deg);
+	}
+	&:after{
+		-webkit-transform:translate(-50%, -50%) rotate(135deg);
+		transform:translate(-50%, -50%) rotate(135deg);
+	}
+}
+
+//체크
+@mixin icon-check($width:18px,$height:30px,$thick:4px,$color:#fff){
+	&:after{
+		content:'';
+		display: inline-block;
+		transform: rotate(45deg);
+		height: $height;
+		width: $width;
+		border-bottom: $thick solid $color;
+		border-right: $thick solid $color;
+	}
+}
+
+//정렬
+@mixin abs($abs:c){
+	position:absolute;
+	@if $abs == h{//horizontal 수평
+		left:50%;
+		transform:translateX(-50%);
+	} @else if $abs == v{//vertical 수직
+		top:50%;
+		transform:translateY(-50%);
+	} @else if $abs == c{//center 중앙
+		top:50%;
+		left:50%;
+		transform:translate(-50%,-50%);
+	}
+}
+
+//벤더 프리픽스(속성,속성값,브라우저 추가)
+@mixin prefix($property, $value, $prefixes: ()){
+	@each $prefix in $prefixes{
+		#{'-' + $prefix + '-' + $property}:$value;
+	}
+	#{$property}:$value;
+}
+
+//말줄임
+@mixin text-hidden-multi($line:1,$lineHeight:19,$auto:none){
+	display:-webkit-box;
+	-webkit-line-clamp:$line;
+	-webkit-box-orient:vertical;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	line-height:($lineHeight*$line)/$line+px;
+	word-break:break-all;
+	white-space: initial;
+	
+	@if $auto == auto{//영역 자동
+		max-height:$lineHeight*$line+px;
+	} @else if $auto == none{//처음부터 영역잡히게
+		height:$lineHeight*$line+px;
+	}
+}
+
+@mixin text-hidden(){
+	display:block; 
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+
+
+//세로값
+@mixin height($h){
+	height:$h+px;
+	line-height:$h+px;
+}
+
+//sp
+@mixin sprite($x:0, $y:0){
+	background:url($sp-common) $x $y no-repeat;
+}
+
+//ico
+@mixin ico($url,$url2:''){
+	background-image:url($url);
+	background-position:0 0;
+	background-size:100%;
+	background-repeat:no-repeat;
+	//$url2 키오스크 아이콘
+	
+	@if $url2 != ''{
+		//kiosk
+		@media screen and (min-width: 1920px){
+			background-image:url($url2);
+		}
+	}
+}
+

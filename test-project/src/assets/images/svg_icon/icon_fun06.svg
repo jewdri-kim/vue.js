@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17">
+    <g fill="none" fill-rule="evenodd">
+        <path d="M0 0H16V16H0z" transform="translate(0 1)"/>
+        <g>
+            <path fill="#FFF" d="M2.667 2.723V1.538c0-.528-.26-1.018-.678-1.249C.987-.263 0 .549 0 1.624V7h2.666V2.723z" transform="translate(0 1) translate(.667 2)"/>
+            <path stroke="#505050" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" d="M2.667 2.5V1.468c0-.46-.26-.888-.678-1.09C.987-.104 0 .605 0 1.542v5.663h10.88V2.501H2.668z" transform="translate(0 1) translate(.667 2)"/>
+            <path fill="#4229BC" d="M3.556 3.758v-.899c0-.4-.26-.771-.678-.946-1.003-.419-1.99.197-1.99 1.012V7h2.668V3.758z" transform="translate(0 1) translate(.667 2)"/>
+            <path fill="#FFF" d="M3.963.222H1.299c.736 0 1.332.597 1.332 1.332v8.704c0 .736.596 1.332 1.332 1.332.736 0 1.495-.596 1.495-1.332v-.587h7.859V1.554c0-.735-.597-1.332-1.332-1.332H3.963z" transform="translate(0 1) translate(.667 2)"/>
+            <path stroke="#505050" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" d="M11.985.222H1.299c.736 0 1.332.597 1.332 1.332v8.704c0 .736.596 1.332 1.332 1.332h9.354V1.554c0-.735-.597-1.332-1.332-1.332z" transform="translate(0 1) translate(.667 2)"/>
+            <path fill="#FF404E" d="M4.382 2.027H6.959999999999999V3.574H4.382z" transform="translate(0 1) translate(.667 2)"/>
+            <path fill="#4229BC" d="M8.764 2.027H11.341999999999999V3.574H8.764z" transform="translate(0 1) translate(.667 2)"/>
+            <path fill="#FF404E" d="M4.382 4.347H6.186V5.347H4.382z" transform="translate(0 1) translate(.667 2)"/>
+            <path fill="#4229BC" d="M8.764 4.347H10.568V5.347H8.764z" transform="translate(0 1) translate(.667 2)"/>
+            <path fill="#FF404E" d="M4.382 5.636H6.186V6.636H4.382z" transform="translate(0 1) translate(.667 2)"/>
+            <path fill="#4229BC" d="M8.764 5.636H10.568V6.636H8.764z" transform="translate(0 1) translate(.667 2)"/>
+            <path fill="#D8D8D8" d="M14.615 9.436L14.615 10.941 5.44 10.941 5.44 9.436" transform="translate(0 1) translate(.667 2)"/>
+            <path fill="#FFF" stroke="#505050" stroke-linecap="round" stroke-width=".5" d="M5.645 9.317H5.36v.91c0 .753-.561 1.363-1.299 1.363h9.382c.738 0 1.336-.61 1.336-1.363v-.91H5.645z" transform="translate(0 1) translate(.667 2)"/>
+        </g>
+    </g>
+</svg>

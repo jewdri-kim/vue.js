@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <path id="t7z8otvmaa" d="M0 0H30.769V30.769H0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g>
+                        <g transform="translate(-406 -806) translate(0 776) translate(48 30) translate(302) translate(56)">
+                            <circle cx="20" cy="20" r="19.5" fill="#FFF" stroke="#E8E8E8"/>
+                            <g transform="translate(4.615 4.615)">
+                                <g fill="#4229BC">
+                                    <path d="M6.923 1.538L15.385 15.385 -1.538 15.385z" transform="translate(10 6.923) rotate(90 6.923 8.462)"/>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

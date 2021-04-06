@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" viewBox="0 0 64 64">
+    <defs>
+        <path id="gm33acdena" d="M0 0.394L41.6 0.394 41.6 3.505 0 3.505z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g>
+                        <g>
+                            <g>
+                                <g>
+                                    <g>
+                                        <g fill="#887CD8" fill-rule="nonzero">
+                                            <path d="M0 0.394L41.6 0.394 41.6 3.505 0 3.505z" transform="translate(-1320 -405) translate(72) translate(1232) translate(16 405) matrix(-1 0 0 1 64 0) matrix(-1 0 0 1 56 12.8) matrix(-1 0 0 1 47.2 0) translate(5.06 17.25)"/>
+                                        </g>
+                                        <g transform="translate(-1320 -405) translate(72) translate(1232) translate(16 405) matrix(-1 0 0 1 64 0) matrix(-1 0 0 1 56 12.8) matrix(-1 0 0 1 47.2 0) translate(5.06 17.25)">
+                                            <use fill="#491BC7" xlink:href="#gm33acdena"/>
+                                        </g>
+                                    </g>
+                                    <g fill="#491BC7">
+                                        <path d="M2.65 0L21.85 19.2 2.65 38.4 0.25 36 17.018 19.418 0 2.4z" transform="translate(-1320 -405) translate(72) translate(1232) translate(16 405) matrix(-1 0 0 1 64 0) matrix(-1 0 0 1 56 12.8) matrix(-1 0 0 1 47.2 0) matrix(-1 0 0 1 22.65 0)"/>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

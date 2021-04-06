@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g>
+                        <g>
+                            <g transform="translate(-1317 -556) translate(244 80) translate(0 240) translate(854 42) translate(184 194) translate(35)">
+                                <circle cx="40" cy="40" r="40" fill="#E8E8E8"/>
+                                <g fill="#FFF" transform="translate(37 23)">
+                                    <path d="M0 11.467H5.714V34.401H0z"/>
+                                    <ellipse cx="2.857" cy="2.867" rx="2.857" ry="2.867"/>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

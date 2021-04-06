@@ -1,0 +1,168 @@
+@charset "UTF-8";
+
+[class^='ico-']{
+	display:inline-block;
+	background-position:0 0;
+	background-size:100%;
+	background-repeat:no-repeat;
+	vertical-align:middle;
+}
+
+.ico-lab{
+	width:40px;height:40px;
+	background-image:url('~@/assets/images/svg_icon/icon_lab.svg');
+}
+
+.ico-detail{
+	width:40px;height:40px;
+	background-image:url('~@/assets/images/svg_icon/icon_detail.svg');
+}
+
+.ico-aipicks{
+	width:54px;height:18px;
+	background-image:url('~@/assets/images/icon/icon_aipicks.png');
+}
+
+
+.ico-qr{
+	width:24px;height:24px;
+	background-image:url('~@/assets/images/icon/icon_qr.png');
+}
+
+.ico-phone{
+	width:19px;height:24px;
+	background-image:url('~@/assets/images/icon/icon_phone.png');
+}
+
+.ico-wait{
+	width:32px;height:32px;
+	background-image:url('~@/assets/images/svg_icon/icon_wait.svg');
+}
+
+.ico-warning{
+	width:44px;height:40px;
+	background-image:url('~@/assets/images/icon/icon_warning.png');
+}
+
+.ico-reload{
+	width:40px;height:40px;
+	background-image:url('~@/assets/images/svg_icon/icon_reload.svg');
+}
+
+.ico-graph{
+	width:24px;height:24px;
+	background-image:url('~@/assets/images/svg_icon/icon_graph.svg');
+}
+
+.ico-location{
+	width:24px;height:24px;
+	background-image:url('~@/assets/images/svg_icon/icon_location.svg');
+}
+
+.ico-location2{
+	width:40px;height:40px;
+	background-image:url('~@/assets/images/svg_icon/icon_location02.svg');
+}
+
+.ico-face{
+	width:40px;height:40px;
+	background-image:url('~@/assets/images/svg_icon/icon_face.svg');
+}
+
+.ico-foreiger_call {
+	width:173px;height:173px;
+	background-image:url('~@/assets/images/svg_icon/icon_foreiger_call.svg');
+}
+
+.ico-foreiger_call2 {
+	width:173px;height:173px;
+	background-image:url('~@/assets/images/svg_icon/icon_foreiger_call2.svg');
+}
+
+.ico-list-data{
+	width:80px;height:80px;
+	background-image:url('~@/assets/images/svg_icon/icon_list_nodata.svg');
+}
+
+.ico-nodata{
+	width:64px;height:64px;
+	background-image:url('~@/assets/images/svg_icon/icon_nodata.svg');
+}
+
+.ico-clock{
+	width:20px;height:20px;
+	background-image:url('~@/assets/images/svg_icon/icon_clock.svg');
+}
+
+//arrow
+[class^='icon-arrow']{
+	@include icon-arr($direction: 'right', $width: 12px, $height: 25px, $thick: 2px, $color: #d8d8d8, $display: inline-block, $position: relative);
+	&.left{
+		transform:rotate(180deg);
+	}
+	&.up{
+		transform:rotate(-90deg);
+	}
+	&.down{
+		transform:rotate(90deg);
+	}
+}
+.icon-arrow2{
+	&:before{
+		border-color:#fff;
+	}
+}
+.icon-arrow3{
+	&:before{
+		border-color:$CPBrandD;
+	}
+}
+
+[class^='icon-']{
+	vertical-align:middle;
+}
+
+.icon-check{
+	display:inline-block;
+	width:40px;height:40px;
+	@include ico('~@/assets/images/svg_icon/icon_check_white.svg');
+}
+
+.icon-check-focused{
+	display:inline-block;
+	width:40px;height:40px;
+	@include ico('~@/assets/images/svg_icon/icon_check_focused.svg');
+}
+
+.spinner{
+	display:block;
+	.count{
+		position:absolute;top:50%;left:50%;
+		transform:translate(-50%,-50%);
+		font-size:16px;
+		color:#fff;
+	}
+	&:after{
+		content:'';
+		display:block;
+		width:40px;
+		height:40px;
+		border:3px solid rgba(255,255,255,.3);
+		border-radius:50%;
+		border-top-color:transparent;
+		animation:spin .8s linear infinite;
+	}
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+//kiosk
+@media screen and (min-width: 1920px){
+	.ico-graph{
+		width:32px;height:32px;
+	}
+}

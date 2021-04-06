@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+    <g fill="none" fill-rule="evenodd" transform="translate(-24 -8)">
+        <g transform="translate(24 8)">
+            <g>
+                <g transform="translate(2 10)">
+                    <path fill="#505050" d="M18.5 10l-.001 8H21v1.5H0V18h16.999L17 11.5H2V10h16.5z"/>
+                    <circle cx="10.333" cy="4.333" r="3.583" stroke="#505050" stroke-width="1.5"/>
+                    <path fill="#505050" d="M2 10L3.5 10 3.5 18 2 18z"/>
+                </g>
+            </g>
+            <g>
+                <g fill="#505050">
+                    <path d="M13.5 0v8H7V6.5h5v-5H1.5v5h2v1.953L7 6.5V8l-4.833 2.5L2.166 8H0V0h13.5z" transform="translate(16.5 1.5)"/>
+                    <g transform="translate(16.5 1.5) translate(3.5 3.167)">
+                        <circle cx="3.333" cy=".667" r="1"/>
+                        <circle cx=".667" cy=".667" r="1"/>
+                        <circle cx="6" cy=".667" r="1"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

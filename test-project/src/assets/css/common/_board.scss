@@ -1,0 +1,146 @@
+@charset "UTF-8";
+
+
+[class^='board-wrap']{
+	.board-top{
+		position:relative;
+		padding-bottom:20px;
+		.summary{
+			color:$CBlack;
+			font-size:16px;
+			em{
+				color:$CBrand;
+			}
+		}
+	}
+
+	[class^='board-type']{
+		table{
+			border-top:2px solid $CBlack;
+			th, td{
+				padding:20px 0;
+				border-bottom:1px solid #ddd;
+				text-align:center;
+				font-size:16px;
+				vertical-align:middle;
+			}
+			th{
+				color:$CGray;
+			}
+			td{
+				color:$CBlack;
+				.no-data{
+					padding:80px 0;
+				}
+			}
+			tr.notice{
+				background:#f8f8f8;
+				td:first-child{
+					color:$CBrand;
+					font-weight:600;
+				}
+			}
+			.title{
+				overflow:hidden;
+				padding-left:42px;
+				line-height:22px;
+				text-align:left;
+				a{
+					@include text-hidden();
+					float:left;
+				}
+			}
+			.date{
+				color:$CGray2;
+			}
+			.name{
+				color:$CGray2;
+			}
+			[class^='category-type']{
+				margin-right:5px;
+				font-size:inherit;
+				font-weight:inherit;
+				color:$CBrand;
+			}
+			.category-type2{
+				color:#557ee5;
+			}
+		}
+	}
+
+	.board-type-comment{
+		table{
+			.title{
+				overflow:hidden;
+				a{
+					float:left;
+					max-width:calc(100% - 30px);
+				}
+				.ico-lock{
+					float:left;
+					margin:2px 0 0 9px;
+				}
+			}
+			[class^='case-']{
+				font-weight:600;
+				color:#ccc;
+				&.case-complete{
+					color:$CBrand;
+				}
+			}
+			tr.comment-detail{
+				display:none;
+				&.active{
+					display:table-row;
+				}
+				td{
+					padding:27px 0;
+				}
+				.comment-box{
+					display:table;
+					table-layout:fixed;
+					position:relative;
+					width:100%;
+					text-align:left;
+					.btn-wrap,
+					dl{
+						display:table-cell;
+						vertical-align:top;
+					}
+					dl{
+						padding-left:200px;
+					}
+					dt,dd{
+						position:relative;
+						padding-left:36px;
+						line-height:26px;
+						font-size:16px;
+						color:$CBlack;
+						[class^='icon-qna-']{
+							position:absolute;top:0;left:0;
+						}
+					}
+					dd{
+						margin-top:20px;
+						.date{
+							margin-top:20px;
+							font-size:14px;
+							color:$CGray2;
+						}
+					}
+					.btn-wrap{
+						width:153px;
+						[class^='btn-type']{
+							width:65px;height:30px;
+							padding:0;
+							line-height:30px;
+							&:nth-child(n+2){
+								margin-left:5px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

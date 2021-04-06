@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <path id="nh994tek9a" d="M1.838 38.124l-1.5-1.5 17.5-17.5-17.5-17.5 1.5-1.5 17.5 17.5 1.5 1.5-19 19z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g transform="rotate(-90 20 20) translate(8.662 .876)">
+            <use fill="#FFF" transform="matrix(-1 0 0 1 21.176 0)" xlink:href="#nh994tek9a"/>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+@import '../common/variable',
+'../common/mixin';
+
+
+
+
+* {margin:0;padding:0;vertical-align:baseline;-webkit-text-size-adjust:100%;box-sizing:border-box;}
+::before,::after{box-sizing:border-box}
+
+body {line-height:1;font-family:$fontK,sans-serif;font-weight:400;font-size:15px;color:#000;/*letter-spacing:-0.5px*/;user-select:none;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,q:before, q:after {content: '';display:block;}
+h1, h2, h3, h4, h5, h6 {font-weight:500;}
+strong{font-weight:700}
+:lang(en){letter-spacing:0}
+
+/* 테이블 스타일 초기화 */
+table {width:100%;border-collapse:collapse;border-spacing:0;empty-cells:show;table-layout:fixed;}
+th,td{font-weight:500}
+td {word-wrap:break-word;word-break:keep-all;}
+fieldset {border:0;margin:0;padding:0;}
+legend, caption {visibility:hidden;overflow:hidden;width:0;height:0;font-size:0;line-height:0;}
+address, caption, em, var{font-style:normal;font-weight:inherit}
+
+/* 링크 */
+a{color:#000;text-decoration:none;-webkit-tap-highlight-color:transparent}
+[role="button"]{outline:none}
+
+/* 이미지, 폼관련 요소 */
+img {border:0;vertical-align:top}
+
+label{cursor:pointer}
+
+//label,
+select,
+input,
+textarea{
+	width:100%;
+	vertical-align:middle;
+	border:1px solid #ddd;
+	box-shadow:none;
+	border-radius:0;
+	outline:none;
+	color:#000;
+	font-size:15px;
+	font-weight:400;
+	font-family:$fontK,sans-serif;
+	@include prefix(appearance, none, webkit moz);
+}
+input[type="password"]{
+	font-family:sans-serif;
+}
+input[type="text"],
+input[type="submit"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="reset"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+input[type="file"],
+input[type="email"],
+input[type="tel"]{
+	height:45px;
+	padding:0 14px;
+}
+
+input[type="radio"],
+input[type="checkbox"]{
+	position:absolute;top:0;left:0;
+	opacity:0;
+	@include prefix(appearance, none, webkit moz ms o);
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus{
+	border:1px solid #000;
+	outline:none;
+}
+input[type="password"]:focus{
+	color:#000;
+}
+
+input[readonly] {
+	//background:#efefef;
+	//color:#999;
+	&:focus{
+		//border:1px solid #ddd;
+	}
+}
+
+input:disabled {
+	opacity:1;
+	background:#fff;
+}
+
+::-webkit-input-placeholder{color:#999;}
+::-moz-placeholder{color:#999;}
+::placeholder {color:#999;}
+
+select{
+	height:45px;
+	padding:0 15px;
+}
+
+
+textarea{
+	padding:15px;
+	overflow:auto;
+	resize:none;
+	line-height:1.5;
+}
+
+button{
+	border:0;
+	border-radius:0;
+	box-shadow:none;
+	background:none;
+	cursor:pointer;
+	outline:none;
+	font-family:inherit;
+}
+
+
+a,button,label{
+	&:active{
+		//background-color:rgba(0,0,0,0.045);
+	}
+}
+
+.hidden {position:absolute;width:0;height:0;font-size:0;line-height:0;overflow:hidden;visibility:hidden;}
+
+::-webkit-scrollbar {width:2px;height:2px}
+::-webkit-scrollbar-track {background:transparent}
+::-webkit-scrollbar-thumb {background:$CBrandGra}
+
+pre{
+	color:inherit;
+	font-size:inherit;
+	font-family:inherit;
+}

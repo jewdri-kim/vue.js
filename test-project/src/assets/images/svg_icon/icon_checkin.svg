@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <filter id="2xfyzigpaa">
+            <feColorMatrix in="SourceGraphic" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"/>
+        </filter>
+        <path id="xh8jjo8cmb" d="M0 27V0h20v27H0zm1.666-1.688h16.667V1.688H1.666v23.625zm13.75-12.656c.691 0 1.25.567 1.25 1.266 0 .699-.559 1.265-1.25 1.265-.69 0-1.25-.566-1.25-1.265 0-.7.56-1.266 1.25-1.266z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd" filter="url(#2xfyzigpaa)">
+        <g transform="translate(10 7)">
+            <use fill="#505050" xlink:href="#xh8jjo8cmb"/>
+        </g>
+    </g>
+</svg>

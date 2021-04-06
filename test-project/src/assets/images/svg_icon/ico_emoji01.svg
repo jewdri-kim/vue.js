@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g>
+                        <path fill="#D0D0D0" d="M0 32C0 14.328 14.327 0 32 0c17.673 0 32 14.328 32 32 0 17.673-14.327 32-32 32C14.327 64 0 49.673 0 32z" transform="translate(-492 -351) translate(316 179) translate(40 92) translate(136 80)"/>
+                        <g opacity=".8">
+                            <path fill="#FFF" d="M4.593 6.954c1.384 0 2.505 1.123 2.505 2.508 0 1.383-1.12 2.506-2.505 2.506-1.386 0-2.507-1.123-2.507-2.506 0-1.385 1.121-2.508 2.507-2.508z" transform="translate(-492 -351) translate(316 179) translate(40 92) translate(136 80) translate(15.94 18.255)"/>
+                            <path stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M5.598 29.13s.48-9.846 9.231-9.846h1.846c8.75 0 9.231 9.23 9.231 9.23" transform="translate(-492 -351) translate(316 179) translate(40 92) translate(136 80) translate(15.94 18.255)"/>
+                            <path fill="#FFF" d="M27.303 6.954c-1.386 0-2.507 1.123-2.507 2.508 0 1.383 1.121 2.506 2.507 2.506 1.384 0 2.506-1.123 2.506-2.506 0-1.385-1.122-2.508-2.506-2.508z" transform="translate(-492 -351) translate(316 179) translate(40 92) translate(136 80) translate(15.94 18.255)"/>
+                            <path stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M23.014 2.043S28.619 4.43 31.891 0M8.877 2.043S3.273 4.43 0 0" transform="translate(-492 -351) translate(316 179) translate(40 92) translate(136 80) translate(15.94 18.255)"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

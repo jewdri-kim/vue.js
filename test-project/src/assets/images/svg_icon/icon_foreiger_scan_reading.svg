@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="360" height="360" viewBox="0 0 360 360">
+    <defs>
+        <filter id="i6sndxl90a" width="106.6%" height="333.3%" x="-3.3%" y="-83.3%" filterUnits="objectBoundingBox">
+            <feOffset dy="3" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="3"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0"/>
+        </filter>
+        <path id="xkzthck8rb" d="M0 156H320V165H0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g transform="translate(20 60)">
+            <g transform="rotate(-90 118 89)">
+                <path fill="#FFF" d="M6 0h162c3.314 0 6 2.686 6 6v250c0 3.314-2.686 6-6 6H6c-3.314 0-6-2.686-6-6V6c0-3.314 2.686-6 6-6z"/>
+                <rect width="6" height="106" x="141" y="136" fill="#505050" rx="1"/>
+                <rect width="6" height="106" x="109" y="136" fill="#505050" rx="1"/>
+                <rect width="6" height="106" x="74" y="136" fill="#505050" rx="1"/>
+                <rect width="6" height="50" x="43" y="191" fill="#505050" rx="1"/>
+                <path fill="#4229BC" d="M23 18H149V118H23z" opacity=".9"/>
+                <path fill="#FFF" d="M105 47c11.581 0 21 9.418 21 21s-9.419 21-21 21c-11.582 0-21-9.418-21-21s9.418-21 21-21z"/>
+                <path fill="#FFF" d="M48 97V39h7.4C71.72 39 85 52.01 85 68S71.72 97 55.4 97H48z"/>
+            </g>
+            <path fill="#FF6671" fill-opacity=".2" d="M0 0L320 0 320 156 160 156 0 156z"/>
+            <use fill="#000" filter="url(#i6sndxl90a)" xlink:href="#xkzthck8rb"/>
+            <use fill="#FF6671" xlink:href="#xkzthck8rb"/>
+        </g>
+    </g>
+</svg>

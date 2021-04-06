@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17">
+    <g fill="none" fill-rule="evenodd">
+        <path d="M0 0H16V16H0z" transform="translate(0 1)"/>
+        <g>
+            <g transform="translate(0 1) translate(0 1.778) rotate(-8 45.98 2.716)">
+                <ellipse cx="1.209" cy="2.948" fill="#4229BC" rx="1.018" ry="2.111"/>
+                <path fill="#FFF" stroke="#505050" stroke-width=".5" d="M1.443 0H3.8850000000000002V5.778H1.443z"/>
+            </g>
+            <g transform="translate(0 1) translate(0 1.778) scale(-1 1) rotate(-8 38.024 116.486)">
+                <ellipse cx="1.209" cy="2.948" fill="#FF404E" rx="1.018" ry="2.111"/>
+                <path fill="#FFF" stroke="#505050" stroke-width=".5" d="M1.443 0H3.8850000000000002V5.778H1.443z"/>
+            </g>
+            <path fill="#FFF" stroke="#505050" stroke-width=".5" d="M3.237 4.633L2.233 4.06C3.52 1.452 5.428.148 7.956.148l.268.005c2.395.09 4.213 1.392 5.454 3.906h0l-1.004.574c-1.092-2.097-3.053-3.336-4.718-3.336h0c-1.666 0-3.627 1.24-4.72 3.336z" transform="translate(0 1) translate(0 1.778)"/>
+            <path fill="#505050" d="M2.542 4.479H3.542V6.026H2.542zM12.853 4.479H13.853V6.026H12.853z" transform="translate(0 1) translate(0 1.778)"/>
+        </g>
+    </g>
+</svg>
