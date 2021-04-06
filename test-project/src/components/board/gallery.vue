@@ -18,7 +18,7 @@
               </a>
           </li>
       </ul>
-      <div v-else>
+      <div v-else class="no-data">
            {{ noDataString }}
       </div>
     </div>

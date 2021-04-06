@@ -29,7 +29,7 @@
         </tbody>
         <tbody v-else>
         <tr>
-          <td :colspan="columns.length+1">
+          <td :colspan="columns.length+1" class="no-data">
             {{ noDataString }}
           </td>
         </tr>

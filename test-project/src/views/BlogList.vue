@@ -14,7 +14,7 @@
     <component 
         :is="selListType" 
         :columns="listColumn"
-        :listData="listData"
+        :listData="listData2"
          @view="viewOpen"
     />
 
@@ -79,6 +79,7 @@ export default {
             width: 'width:80px' 
           }
         ],
+        listData2:[],
         listData : [
             {
                 title : '[이벤트] 1120주년을 축하해',
