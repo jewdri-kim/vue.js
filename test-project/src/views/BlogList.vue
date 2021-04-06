@@ -14,7 +14,7 @@
     <component 
         :is="selListType" 
         :columns="listColumn"
-        :listData="listData2"
+        :listData="listData"
          @view="viewOpen"
     />
 
