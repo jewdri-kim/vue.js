@@ -35,6 +35,11 @@ const routes = [
     name: 'Blog',
     component: () => import( '../views/BlogList.vue')
   },
+  {
+    path: '/todo',
+    name: 'Todo',
+    component: () => import( '../views/Todo.vue')
+  },
 
 
 

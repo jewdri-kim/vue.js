@@ -8,6 +8,7 @@
                 <li><router-link to="/event">Event</router-link></li>
                 <li><router-link to="/notice">Notice</router-link></li>
                 <li><router-link to="/blog">Blog</router-link></li>
+                <li><router-link to="/todo">Todo</router-link></li>
                 <li><router-link to="/guide">가이드</router-link></li>
             </ul>
         </nav>
