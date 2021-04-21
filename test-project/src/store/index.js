@@ -6,7 +6,14 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   strict: process.env.NODE_ENV !== 'production',      // ture : 성능이슈, 
   state: {
-    todoList: null,
+    todoList: [
+      {
+        title: '달리기',
+        date: 'yyyy-mm-dd hh:mm:ss',
+        isEnd : false,
+        id : 1,
+      }
+    ],
     toDayDate : null,
     time : null,
     todoChkNum : null
@@ -16,6 +23,7 @@ export default new Vuex.Store({
       state.todoList.push(todoItem);
       let tmpData = JSON.stringify(state.todoList);
       localStorage.setItem('todoList', tmpData);
+      console.log(localStorage.getItem('todoList'));
      },
     deleteToDoItem(state, todoItem){
       state.todoList.forEach(function(item, index){
@@ -38,6 +46,7 @@ export default new Vuex.Store({
         }
       })
     },
+    /*
 		initTodoList(state) {
 			if(localStorage.getItem('todoList')) {
 				this.replaceState(
@@ -46,7 +55,7 @@ export default new Vuex.Store({
 			}else{
         // json 파일로 가져오기?
       }
-		}
+		}*/
   },
   actions: {
     completedToDo({commit}, todoItem){   // {commit}
@@ -72,7 +81,9 @@ export default new Vuex.Store({
   modules: {
   },
   getters:{
-    toDayDate (){},
+    toDayDate (){
+      
+    },
     time(){}
   },
   methods: {

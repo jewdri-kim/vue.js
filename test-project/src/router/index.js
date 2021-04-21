@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Main from '../views/Main.vue'
+//import store from '@/router/index.js'
 
 Vue.use(VueRouter)
 
@@ -39,12 +40,21 @@ const routes = [
     path: '/todo',
     name: 'Todo',
     component: () => import( '../views/Todo.vue')
+    /*
+    beforeEnter: (to, from ,next) => {
+      if(localStorage.getItem('todoList')) {
+        console.log();
+				  store.replaceState(
+					Object.assign(store.app.$store.state, JSON.parse(localStorage.getItem('todoList')))
+				);
+      
+			}else{
+        // json 파일로 가져오기?
+      }
+
+      next();
+    }*/
   },
-
-
-
-
-  
   {
     path: '/guide',
     name: 'Guide',

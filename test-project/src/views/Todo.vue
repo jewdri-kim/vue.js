@@ -6,9 +6,9 @@
       <div class="form-item">
       <input-field
           v-model="addTodo.title"
-          :inputLabel="할일"
           :inputId="todoTitle"
-          :inputPlaceholder="입력"/>
+          :inputLabel="todoTitle"
+          :inputPlaceholder="inputPlace"/>
       </div>
       <button @click="addTodoList()">입력</button>
 
@@ -41,6 +41,8 @@ export default {
   data(){
     return {
         listName : '할일',
+        todoTitle: 'todoTitle',
+        inputPlace: '입력하세요',
         listColumn: [
           {
             name: '할일',
@@ -70,7 +72,7 @@ export default {
       
   },
   beforeCreate() {
-		this.$store.dispatch('initTodoList');
+		//this.$store.dispatch('initTodoList');
 	},
   methods:{
     //...mapActions(['completedToDo']),
